@@ -1,7 +1,18 @@
+@font-face {
+  font-family: "Gotham-Light";
+  src: url("/Users/nicholasdoelger/Library/Fonts/Gotham-Light.otf");
+}
+
 body {
   margin: 0;
   text-align: center;
   box-sizing: border-box;
+  background: rgb(0, 212, 255);
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(226, 226, 255, 1) 75%
+  );
 }
 
 a {
@@ -9,12 +20,23 @@ a {
   text-decoration: none;
 }
 
+.name,
+.title,
+li {
+  font-family: "Gotham-Light", sans-serif;
+}
+
+.title {
+  font-size: 5rem;
+}
+
 header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 6px 10%;
-  background-color: aquamarine;
+  padding: 6px 5%;
+  background-color: rgba(226, 226, 255, 0);
+  width: 90%;
 }
 
 ul {
@@ -46,21 +68,46 @@ li a:hover {
   color: brown;
 }
 
-.block {
-  background-color: green;
-  height: 400px;
-  width: 50%;
-  min-width: 480px;
-  max-width: 600px;
-  text-align: center;
-  position: relative;
-  display: inline-flex;
-  margin: 2.5px;
+.grid {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.grid div {
+.block {
+  flex-grow: 1;
+  background-color: white;
+  height: 400px;
+  width: 700px;
+  text-align: center;
+  margin: 2.5px;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+}
+
+.title {
+  display: flex;
+  flex-grow: 1;
+  height: 400px;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+  opacity: 0;
+}
+
+.grid a {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .leap-images img {
