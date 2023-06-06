@@ -1,0 +1,12 @@
+ul {
+  background-color: beige;
+  overflow: hidden;
+}
+
+li {
+  display: inline;
+  margin: 5px;
+  padding: 10px;
+  float: right;
+  background-color: beige;
+}

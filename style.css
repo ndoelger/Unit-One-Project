@@ -1,31 +1,55 @@
 body {
   margin: 0;
   text-align: center;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px 10%;
+  background-color: aquamarine;
 }
 
 ul {
-  background-color: blanchedalmond;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 50px;
-  top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 480px;
+  list-style: none;
+}
+
+header h2 {
+  margin-right: auto;
+}
+
+.name {
+  margin-right: auto;
 }
 
 li {
   display: inline-block;
-  font-size: 20px;
-  margin: 0 5px;
+  padding: 0 10px;
+}
+
+li:nth-child(2) {
+  padding: 0 15px 0 0;
+}
+
+li a {
+  transition: all 0.3s ease 0s;
+}
+
+li a:hover {
+  color: brown;
 }
 
 .block {
   background-color: green;
-  height: 200px;
-  width: 80%;
+  height: 400px;
+  width: 50%;
   min-width: 480px;
   max-width: 600px;
   text-align: center;
@@ -34,13 +58,98 @@ li {
   margin: 2.5px;
 }
 
-.title {
-  position: absolute;
-  bottom: -8px;
-  left: 10px;
+.grid div {
+  background-size: cover;
+  background-position: center;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.leap-images img {
+  display: block;
+  width: 70%;
+  text-align: center;
+  margin: 5px auto;
+}
+
+.leap-images {
+  text-align: center;
+  margin: 5 auto;
+}
+
+.TD-container {
+  max-width: 1224;
+  width: 95%;
+  margin: auto;
+  padding: 30px 0;
+
+  display: flex;
+  gap: 10px;
+}
+
+.TD-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.TD-column img {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 15px 0;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .TD-container {
+    flex-direction: column;
+  }
+}
+
+.fbb-container {
+  max-width: 1224;
+  width: 95%;
+  display: flex;
+  margin: auto;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.fbb-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.fbb-column img {
+  height: 100%;
+  width: 100%;
+  padding: 0 0 15px 0;
+}
+
+@media (max-width: 600px) {
+  .fbb-container {
+    flex-direction: column;
+  }
+}
+
+.leap-container {
+  display: flex;
+  align-items: flex-start;
+  margin: auto;
+  gap: 10px;
+  width: 95%;
+}
+
+.leap-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.leap-column img {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 15px 0;
+}
+
+@media (max-width: 600px) {
+  .leap-container {
+    flex-direction: column;
+  }
 }
