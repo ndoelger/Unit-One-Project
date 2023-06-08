@@ -2,23 +2,56 @@
   font-family: "Gotham-Light";
   src: url("/Users/nicholasdoelger/Library/Fonts/Gotham-Light.otf");
 }
-
-body {
-  margin: 0;
-  text-align: center;
-  box-sizing: border-box;
-  background: rgb(0, 212, 255);
-  background: radial-gradient(
-    circle,
-    rgba(0, 212, 255, 1) 0%,
-    rgba(226, 226, 255, 1) 75%
-  );
+@font-face {
+  font-family: "Gotham-Book";
+  src: url("/Users/nicholasdoelger/Library/Fonts/Gotham-Book.otf");
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
+
+body {
+  margin: 0;
+  padding-bottom: 80px;
+  text-align: center;
+  box-sizing: border-box;
+  background: rgb(42, 55, 74);
+  background: linear-gradient(
+    180deg,
+    rgba(42, 55, 74, 1) 0%,
+    rgba(223, 230, 236, 1) 100%
+  );
+  background-size: contain;
+}
+
+h1 {
+  font-family: "gotham-book", sans-serif;
+  color: #dfe6ec;
+  width: 80%;
+  transition: all 0.3s ease 0s;
+  margin: 0 auto;
+}
+p {
+  font-family: "gotham-light", sans-serif;
+  color: #dfe6ec;
+  width: 60%;
+  font-size: 1rem;
+  margin: 20px auto;
+}
+
+@media (max-width: 400px) {
+  p {
+    width: 90%;
+  }
+}
+
+h1:hover {
+  color: #b6d98d;
+}
+
+/* HEADER */
 
 .name,
 .title,
@@ -34,8 +67,8 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 6px 5%;
-  background-color: rgba(226, 226, 255, 0);
+  padding: 0 5%;
+  color: #dfe6ec;
   width: 90%;
 }
 
@@ -45,6 +78,7 @@ ul {
 
 header h2 {
   margin-right: auto;
+  transition: all 0.3s ease 0s;
 }
 
 .name {
@@ -54,6 +88,7 @@ header h2 {
 li {
   display: inline-block;
   padding: 0 10px;
+  font-size: 1.25rem;
 }
 
 li:nth-child(2) {
@@ -64,93 +99,102 @@ li a {
   transition: all 0.3s ease 0s;
 }
 
+header h2:hover,
 li a:hover {
-  color: brown;
+  color: #b6d98d;
 }
 
-.grid {
-  width: 90%;
+header img {
+  width: 39px;
+  margin-right: 15px;
+  transition: all 0.3s ease 0s;
+}
+
+header img:hover {
+  background-color: #b6d98d;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: #586c80;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover {
+  background-color: #b6d98d;
+  cursor: pointer;
+  color: black;
+}
+
+/* HOMEPAGE */
+
+.row {
+  width: 95%;
+  display: flex;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
-.block {
+.package {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 7px;
+  width: 50%;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.row img {
+  width: 100%;
+}
+
+.test-title {
   flex-grow: 1;
-  background-color: white;
-  height: 400px;
-  width: 700px;
-  text-align: center;
-  margin: 2.5px;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 55, 76, 0.6);
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease 0s;
-}
-
-.title {
-  display: flex;
-  flex-grow: 1;
-  height: 400px;
-  width: 600px;
-  background-color: rgba(255, 255, 255, 0.8);
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease 0s;
   opacity: 0;
+  transition: all 0.3s ease 0s;
 }
 
-.grid a {
+.page-link {
   flex-grow: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.leap-images img {
-  display: block;
-  width: 70%;
-  text-align: center;
-  margin: 5px auto;
-}
-
-.leap-images {
-  text-align: center;
-  margin: 5 auto;
-}
-
-.TD-container {
-  max-width: 1224;
-  width: 95%;
-  margin: auto;
-  padding: 30px 0;
-
-  display: flex;
-  gap: 10px;
-}
-
-.TD-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.TD-column img {
-  width: 100%;
-  height: 100%;
-  padding: 0 0 15px 0;
-  object-fit: cover;
-}
-
-@media (max-width: 600px) {
-  .TD-container {
+@media (max-width: 700px) {
+  .row {
     flex-direction: column;
+    width: 90%;
+  }
+
+  .package {
+    width: 100%;
+    margin: 5px auto;
   }
 }
 
-.fbb-container {
+.row h1:hover {
+  color: #dfe6ec;
+}
+
+/* INDIVIDUAL PAGES */
+
+.container {
   max-width: 1224;
   width: 95%;
   display: flex;
@@ -159,44 +203,19 @@ li a:hover {
   align-items: flex-start;
 }
 
-.fbb-column {
+.column {
   display: flex;
   flex-direction: column;
 }
 
-.fbb-column img {
+.column img {
   height: 100%;
   width: 100%;
   padding: 0 0 15px 0;
 }
 
 @media (max-width: 600px) {
-  .fbb-container {
-    flex-direction: column;
-  }
-}
-
-.leap-container {
-  display: flex;
-  align-items: flex-start;
-  margin: auto;
-  gap: 10px;
-  width: 95%;
-}
-
-.leap-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.leap-column img {
-  width: 100%;
-  height: 100%;
-  padding: 0 0 15px 0;
-}
-
-@media (max-width: 600px) {
-  .leap-container {
+  .container {
     flex-direction: column;
   }
 }

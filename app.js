@@ -1,6 +1,5 @@
 $(() => {
-  $block = $(".block");
-  $title = $(".title");
+  $title = $(".test-title");
 
   $title.on("mouseover", function () {
     $(this).css("opacity", "1");
